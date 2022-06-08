@@ -1,3 +1,21 @@
+
+function User(){
+    new Promise((resolve,reject)=>{
+        speechSynthesis.speak(new SpeechSynthesisUtterance('Введите ваше имя в поле пожалуйста'))
+        setTimeout(()=>{
+            resolve()
+        },1000)
+    }).then(()=>{
+        const nameUser = prompt('Ваше имя ?');
+        if(nameUser == 'Хуй' && 'Пизда' && 'Жопа' && 'Чорт'){
+        speechSynthesis.speak(new SpeechSynthesisUtterance('Попрошу Вас не выражаться, а теперь говорите что вам нужно '))
+    }else{
+        speechSynthesis.speak(new SpeechSynthesisUtterance('Слушаю Вас  ' + nameUser))
+    }
+    })
+    
+    
+}
 function Gets(){
         const citi = prompt('Ваш город?');
         const citiName = document.querySelector('.citiname');
@@ -17,39 +35,57 @@ function Gets(){
    })
         setTimeout(()=>{
             resolve()
-        },1000)
+        },2000)
   })
     }
     const micro = document.querySelector('.micro');
-    const weather = document.querySelector('.weather');
-            window.SpeechRecognition=window.SpeechRecognition||webkitSpeechRecognition;
+    function Weather(){
+        const weather = document.querySelector('.weather');
+                weather.style.transition = '.2s';
+                weather.style.opacity = 1;        
+                weather.style.height = '250px';
+                weather.style.transition = '.5s';
+    }
+    window.SpeechRecognition=window.SpeechRecognition||webkitSpeechRecognition;
             const speech = new window.SpeechRecognition();
             speech.interimResults = false;
             speech.addEventListener('result',(e)=>{
-                console.log(e.results[0][0].transcript)
                 let word = e.results[0][0].transcript;
                 if(word == 'погода'&&'Погода'){
                     //Вот это логику с проверками команд нужно вынести отдельно
-                    weather.style.transition = '.2s';
-                    weather.style.opacity = 1;
-                    weather.style.height = '250px';
-                    weather.style.transition = '.5s';
-                    //Вот это логику с проверками команд нужно вынести отдельно
-                    Gets()//Как тут 
-                }else{
+                   new Promise((resolve,reject)=>{
+                         Gets();
+                    setTimeout(()=>{
+                               resolve()
+                      },1000)
+              }).then(()=>{
+                          Weather()  
+                    })
+                 }else{
                     return null;
                 }
             })
-            speech.addEventListener('end',()=>{
-               speech.abort()
+
+
+        speech.addEventListener('end',()=>{
+               speech.start()
                micro.classList.remove('activemicro')
+
         }) 
+
         micro.addEventListener('dblclick',()=>{
             speech.abort();
 
         })
      micro.addEventListener('click',()=>{
-          speech.start()
+         new Promise((resolve,rej)=>{
+             User() 
+             setTimeout(()=>{
+            resolve()
+         },2000)
+         }).then(()=>{
+             speech.start()
+          
          micro.classList.add('activemicro');
          setTimeout(()=>{
          micro.style.transition = '3s';
@@ -58,6 +94,10 @@ function Gets(){
          micro.style.left = '20px'
          micro.style.transition = '2s';
      },1000)
+         })
+        
+          
     
      })
+  
         
