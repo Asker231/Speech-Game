@@ -1,0 +1,116 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+}
+.wrap{
+    width: 1440px;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    
+}
+@media (max-width:479px){
+  .wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+       
+  }
+    
+}
+.micro{
+    position: absolute;
+    top: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.micro>i{
+    font-size: 40px;
+    color: aliceblue;
+}@media (max-width:479px){
+    .micro{
+        width: 50px;
+        height: 50px;
+    }
+}.activemicro{
+    top: 10px;
+    left: 10px;
+    animation: Micro 1s linear infinite;
+
+}
+@keyframes Micro {
+      0%{
+        opacity: 0.5;
+        border:10px solid rgb(125, 102, 218)
+      }50%{
+        opacity: 0.7;
+        border:25px solid rgb(124, 94, 197)
+      } 100%{
+        opacity: 1;
+        border:0.5px solid rgb(146, 94, 214)
+      }
+}
+
+.weather{
+    opacity: 0;
+    height: 0;
+    position: relative;
+    top: 170px;
+    width: 600px;
+    max-width: 600px;
+    padding-top:40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    gap: 20px;
+    background:linear-gradient(123deg,rgb(35, 183, 151) ,rgb(7, 131, 207)) ;
+}
+@media (max-width:479px){
+    .weather{
+        width: 370px;
+         top: 100px;
+    }
+}
+.citiname{
+    font-size: 30px;
+    color: aqua;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+}.time{
+    font-size: 23px;
+    color: greenyellow;
+    letter-spacing: 2px;
+
+}
+.degBox{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding:5px ;
+    align-items: center;
+}.deg{
+    font-size: 25px;
+    color: rgb(34, 110, 210);
+}.im{
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+}

@@ -1,0 +1,9 @@
+ apiKey http://api.weatherstack.com/current?access_key=c331d58a6741e47e32474ab6b6d53e45&query=Moscow
+   
+
+
+current: {observation_time: "12:53 PM", temperature: 20, weather_code: 113, weather_icons: ["https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"], weather_descriptions: ["Sunny"], …}
+
+location: {name: "Moscow", country: "Russia", region: "Moscow City", lat: "55.752", lon: "37.616", …}
+
+request: {type: "City", query: "Moscow, Russia", language: "en", unit: "m"}
