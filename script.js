@@ -24,6 +24,7 @@ const weather = document.querySelector(".weather");
 window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 const speech = new window.SpeechRecognition();
 speech.interimResults = false;
+
 function openWrap() {
   weather.style.transition = ".2s";
   weather.style.opacity = 1;
