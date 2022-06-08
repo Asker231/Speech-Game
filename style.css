@@ -8,7 +8,7 @@ body{
 }
 .wrap{
     width: 1440px;
-    max-width: 1440px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 10px;
