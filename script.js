@@ -13,8 +13,7 @@ function User(){
         speechSynthesis.speak(new SpeechSynthesisUtterance('Слушаю Вас  ' + nameUser))
     }
     })
-    
-    
+ 
 }
 function Gets(){
         const citi = prompt('Ваш город?');
